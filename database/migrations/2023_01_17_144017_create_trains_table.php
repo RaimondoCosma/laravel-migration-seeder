@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timeTz('arrival_time');
             $table->string('train-code');
             $table->unsignedTinyInteger('cabin_numbers');
-            $table->boolean('on_schedule');
+            $table->boolean('on_schedule')->default(1);
             $table->boolean('is_deleted');
             $table->timestamps();
         });
