@@ -11,7 +11,7 @@ class PageController extends Controller
     public function index()
     {
         // $trains = Train::whereDate('departure_date', now()->format('Y-m-d'))->get();
-        $trains = Train::whereDate('departure_date', Carbon::today())->get();
+        $trains = Train::whereDate('departure_date', '>=', Carbon::today())->get();
         return view('homepage', compact('trains'));
     }
 }
